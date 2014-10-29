@@ -118,7 +118,8 @@ p <- newdata %>%
 p
 ggsave('plots/speed_change_called.png')
 
-#What's up with the
+#Check how often they get each kind of strikeout...
+#About the same rate...
 dcast(strikeouts, pitcher_last ~ des_last)
 
 
