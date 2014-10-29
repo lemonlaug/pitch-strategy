@@ -90,7 +90,8 @@ p <- newdata %>%
     geom_hline(yintercept = mean(strikeouts$swinging_k), line_type=2, colour='black') +
     scale_colour_discrete(name='Pitcher') +
     xlab("Change in speed from setup pitch") +
-    ylab("Probability of K")
+    ylab("Probability of K") +
+    ggtitle("Swinging Strikes")
 p
 ggsave('plots/speed_change_swinging.png')
 
