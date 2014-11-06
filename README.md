@@ -15,7 +15,7 @@ In game seven of the world series, with the tying run on third base and two outs
 
 ![Chart of Bumgarner vs. Perez](plots/perez_v_bumgarner.png)
 
-This is an unusual strategy at best. Only one of the six pitches was (barely) in the zone, and besides differences in how far in or out the pitches were, there was hardly any variation in speed, or pitch selection. Nonetheless, this approach was successful when Perez popped weakly in foul territory to end the game. In the postgame interview, Bumgarner uncharacteristically revealed his strategy.
+This is an unusual strategy to put it mildly. Only one of the six pitches was (barely) in the zone, and besides differences in how far in or out the pitches were, there was hardly any variation in speed, or pitch selection. Nonetheless, this approach was successful when Perez popped weakly in foul territory to end the game. In the postgame interview, Bumgarner uncharacteristically revealed his strategy.
 
 > I knew Perez was going to want to do something big... We tried to use that aggressiveness and throw our pitches up in the zone. It's a little bit higher than high, I guess, and fortunately I was able to get some past him.
 
