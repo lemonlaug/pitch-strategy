@@ -24,7 +24,7 @@ ggplot(bins, aes(speed_change, prob_k, fill=pitcher_last)) +
 #Model change in speed effects.
 #Swinging
 speed.model <- strikeouts %>%
-    bayesglm(swinging_k ~ factor(pitcher_last)*ns(speed_change, knots = seq(-20,20,5)), data=., family=binomial)
+    bayesglm(swinging_k ~ ns(speed_change, knots = seq(-20,20,5)), data=., family=binomial)
 
 newdata <- expand.grid(speed_change = -15:15, pitcher_last=unique(strikeouts$pitcher_last))
 preds <- predict(speed.model, newdata, type='response', se.fit=TRUE)

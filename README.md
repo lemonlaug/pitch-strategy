@@ -19,7 +19,9 @@ This is an unusual strategy to put it mildly. Even in rock paper scissors, where
 
 In this case, Bumgarner knew his opponents tendencies and the psychology of the moment and used that knowledge against him masterfully to get an out without throwing a ball that it was possible to put in play.
 
-Such strategic concerns are an underexplored application of PitchFx data. Each at-bat is not only a sequence of independent pitches, but in fact a whole strategic game between pitcher and batter, which may extend back years. Conventional wisdom says that pitchers are most effective when changing speeds, and forcing the hitter to change his eye level by working inside and outside, and up and down in the zone.
+Such strategic concerns are an underexplored application of PitchFx data. Each at-bat is not only a sequence of independent pitches, but in fact a whole strategic game between pitcher and batter, which may extend back years. Conventional wisdom says that pitchers are most effective when changing speeds, and forcing the hitter to change his eye level by working inside and outside, and up and down in the zone. In fact, OVERALL, this seems to be true. The chart below shows the likelihood of getting a swinging strike based only speed changes, basically the best way to get a swing and miss is to take something off relative to the preceding pitch (ignoring all other factors).
+
+![Chart of effect on speed change](plots/speed_change_swinging.png)
 
 Both the pitcher and batter try to anticipate each others' expectations in order to guess (hitter) or defy (pitcher) expectations of their adversary. Because of this strategic element, the game theory is extremely rich, and pitchers and batters presumably exploit all kinds of information to try and gain an edge in this strategic battle. This information may include, previous at bats against a given adversary, previous pitches in the current at bat, the pitcher's strategy against other hitters. In the Bumgarner vs. Perez atbat, Bumgarner apparently exploited the energy of the scenario, along with an apparently detailed understanding of Perez's tendencies to put away a dangerous hitter with virtually no risk of giving up a hit.
 
@@ -47,6 +49,10 @@ We can do a similar exercise for called strikes, to see if there's any evidence 
 ![Effect of setup pitches on called strike probabilities](plots/called_k_by_pitch_type_setup.png)
 
 In this chart, aside from some obvious data sparsity issues, note, there's not much difference within the columns, meaning pretty much that the pitcher has to get it in the halo around the edges of the strikezone to get a called strike, and once that's accomplished, what the last pitch was doesn't make much difference by itself (this is a case where changing locations, moving up/down in/out, might be more important than pitch-selection alone.
+
+The Maestro
+----------------------------
+Looking here at the overall does shed a little light on how amazing Bumgarner's approach was. Overall, back to back heaters doesn't seem to be a particularly good strategy. Though in this particular case, it obviously was, which is a credit to Bumgarner's mastery of his craft, and perhaps a hint of some of the modeling challenges likely to come up in further work on this data!
 
 What Else To Do
 ----------------------------
