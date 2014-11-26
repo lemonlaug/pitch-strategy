@@ -38,7 +38,7 @@ swing_strategy <- ctree(factor(compress) ~ factor(pitch_type_last) +
                             I(as.numeric(px_setup)) +
                             I(as.numeric(pz_setup)) +
                             I(as.numeric(pz_last)) +
-                            I(as.numeric(start_speed_setup)) +
+                            I(as.numeric(start_speed_last)) +
                             I(as.numeric(start_speed_setup)) +
                             factor(stand_last) +
                             factor(des_setup) +
@@ -47,7 +47,20 @@ swing_strategy <- ctree(factor(compress) ~ factor(pitch_type_last) +
                         controls = ctree_control(maxdepth = 4)
                         )
 
-pdf("plots/swinging_tree.pdf", width=80, height=20)
+pdf("plots/swinging_tree.pdf", width=80, height=15)
 plot(swing_strategy)
-     #terminal_panel = node_barplot(swing_strategy, rot_labels=90))
+#     terminal_panel = node_terminal(swing_strategy))
 dev.off()
+
+probs <- tapply(treeresponse(swing_strategy), where(swing_strategy), unique)
+p <- data.frame(matrix(unlist(probs), ncol=5, byrow=TRUE))[c(2,4),]
+names(p) <- levels(factor(model_data$compress))
+p$count <- c('1-2', '2-1')
+
+plt <- ggplot(melt(p, id.vars=c('count')), aes(variable, value, fill=count)) +
+    geom_bar(stat='identity', position='dodge') +
+        ylab("Probability of Outcome") +
+            xlab("Outcome") +
+                ggtitle("Outcomes for Fastball")
+        
+plt
