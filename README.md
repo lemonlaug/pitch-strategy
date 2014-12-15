@@ -28,13 +28,13 @@ Both the pitcher and batter try to anticipate each others' expectations in order
 
 Modeling
 ---------------------------
-This repository contains some preliminary attempts to create a data set useful for modeling pitching strategy. We begin by creating a data set that includes all pitches and the pitches that preceded them. To begin with, we do a little modeling to show the differences among pitches in how likely they are to get a swinging strike.
+In this repository I've created a data set useful for modeling pitching strategy. We begin by creating a data set that includes all pitches and the pitches that preceded them. To begin, I made modelto show the differences among pitches in how likely they are to get a swinging strike.
 
 ![Swinging Strike Probabilities](plots/swinging_k_by_pitch_type.png)
 
-In the above chart, we plot the probability density of a swinging strike for four different pitches based on the location of the pitch in righty vs. righty scenarios. Not surprisingly, there are big differences here: breaking balls are more effective low in the zone, whereas fourseam fastballs are effective high in the zone. All pitches have a kind of halo around the plate, getting swinging strikes on pitches in the heart of the plate is unlikely, but more likely for changeups, and curveballs, which is not surprising given that these pitches rely more on speed changes than location to deceive the hitter.
+The above chart shows the probability density of a swinging strike for four different pitches based on the location of the pitch in righty vs. righty scenarios. Not surprisingly, there are big differences here: breaking balls are more effective low in the zone, whereas fourseam fastballs are effective high in the zone. All pitches have a kind of halo around the plate, getting swinging strikes on pitches in the heart of the plate is unlikely, but more likely for changeups, and curveballs, which is not surprising given that these pitches rely more on speed changes than location to deceive the hitter.
 
-But what is the effect of strategy? How does this story change based on setups? We can model this by looking at the difference between the overall probability densities and the probability densities associated with a particular setup pitch.
+But what is the effect of strategy? How does this story change based on setups? A model can capture this by looking at the difference between the overall probability densities and the probability densities associated with a particular setup pitch.
 
 ![Effect of Setup Pitches on Strike Probabilities](plots/swinging_k_by_pitch_type_setup.png)
 
@@ -44,11 +44,11 @@ The columns of this grid represent the final pitch of a two pitch sequence, and 
 
 In this view, the importance of speed would seem to become more apparent. The top row shows the effectiveness of a changeup as a setup pitch. In this row, the green shows that pitches outside the zone are more effective when setup by a changeup. Some of the red zones, where the change in probability of getting a swing and a miss are reduced, seem to be associated with not changing speeds e.g. setting up curves with changeups and vice versa.
 
-We can do a similar exercise for called strikes, to see if there's any evidence for strategic thinking as far as called strikes go. There are fewer called strikes overall, and as we'll see, the overall evidence for setting up a batter for a called strike ("freezing them") isn't strong (at least, not on the basis of pitch selection alone).
+A similar approach works for different at-bat outcomes too including called strikes. There are fewer called strikes overall, and as we'll see, the overall evidence for setting up a batter for a called strike ("freezing them") isn't strong (at least, not on the basis of pitch selection alone).
 
 ![Effect of setup pitches on called strike probabilities](plots/called_k_by_pitch_type_setup.png)
 
-In this chart, aside from some obvious data sparsity issues, note, there's not much difference within the columns, meaning pretty much that the pitcher has to get it in the halo around the edges of the strikezone to get a called strike, and once that's accomplished, what the last pitch was doesn't make much difference by itself (this is a case where changing locations, moving up/down in/out, might be more important than pitch-selection alone.
+In this chart, aside from some obvious data sparsity issues, there's not much difference within the columns, meaning pretty much that the pitcher has to get it in the halo around the edges of the strikezone to get a called strike, and once that's accomplished, what the last pitch was doesn't make much difference by itself (this is a case where changing locations, moving up/down in/out, might be more important than pitch-selection alone.
 
 The Maestro
 ----------------------------
